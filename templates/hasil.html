@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hasil</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      </head>
+
+
+      <style>
+            .button {
+        display: block;
+        width: 250px;
+        height: 50px;
+        background: blueviolet;
+        padding: 15px;
+        text-align: center;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+    }
+        </style>     
+<body style="background-color: lemonchiffon;">
+    <div class="row">
+        <div class="col-lg-6" style="background-color:lavender;">
+            <font size="6">
+                    <center>
+                            Hasil Yang Ditebak Dengan Menggunakan Avg Pooling
+                    </center>
+                    <br>
+                
+            </font>
+            {% for item in value %}
+             <center>
+                <img src="{{item[1]}}" alt=""> <br>
+                <span></span>
+                    <font size="6">
+                        <b> {{item[2]}} </b> 
+                        <br>
+                    </font>
+               </span>
+         
+            </center>
+             
+         {% endfor %}
+         
+        
+        </div>
+        <div class="col-sm-6" style="background-color:lavenderblush;">
+            <font size="6"> 
+                <center>
+                        Hasil Yang Ditebak Dengan Menggunakan Max Pooling
+                </center>
+                <br>
+                
+            </font>
+            {% for item in data %}
+            <center>
+               <img src="{{item[1]}}" alt=""> <br>
+               <span></span>
+                   <font size="6"> 
+                       <b> {{item[2]}} </b> 
+                   </font>
+                   <br>
+
+              </span>
+        
+           </center>
+            
+            {% endfor %}
+        
+        
+        </div>
+     </div>
+     <center>
+         <br>
+            <a class="button" href="{{ url_for('BackCanvas') }}">START</a>
+     </center>
+        
+</body>
+</html>
